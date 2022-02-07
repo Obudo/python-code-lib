@@ -32,7 +32,8 @@ class StronglyConnectedComponentsFinder:
             if self.ids[neighbor_id] == self.UNVISITED:
                 self.__dfs(neighbor_id)
             if self.on_stack[neighbor_id]:
-                self.low[root_id] = min(self.low[root_id], self.low[neighbor_id])
+                self.low[root_id] = min(self.low[root_id],
+                                        self.low[neighbor_id])
 
         if self.ids[root_id] == self.low[root_id]:
             self.__clear_stack(root_id)
@@ -52,10 +53,10 @@ class StronglyConnectedComponentsFinder:
 if __name__ == '__main__':
     n = 8
     adjs = {
-        0: [1,2],
+        0: [1, 2],
         1: [0, 3],
         2: [3],
-        3: [4,5],
+        3: [4, 5],
         4: [2, 5, 6],
         5: [7],
         6: [5],
